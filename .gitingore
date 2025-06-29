@@ -4,3 +4,11 @@ uploads/
 *.log
 *.csv
 *.pdf
+
+
+node_modules/
+dist/
+.env
+uploads/
+client/node_modules/
+client/dist/
