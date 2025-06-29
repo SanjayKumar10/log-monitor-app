@@ -5,14 +5,17 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/preset-env": "^7.27.2",
+    "babel-jest": "^30.0.2",
     "cors": "^2.8.5",
     "express": "^5.1.0",
+    "jest": "^30.0.3",
     "jspdf": "^3.0.1",
     "jspdf-autotable": "^5.0.2",
     "moment": "^2.30.1",
