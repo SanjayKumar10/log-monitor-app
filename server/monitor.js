@@ -54,6 +54,44 @@ export function analyzeJobs(jobs) {
   return results;
 }
 
+export function analyzeJobsDetailed(jobs) {
+  const results = [];
+
+  for (const pid in jobs) {
+    const job = jobs[pid];
+
+    const description = job.start?.description || job.end?.description || 'Unknown';
+
+    if (!job.start || !job.end) {
+      results.push({
+        pid,
+        description,
+        duration: '-',
+        status: 'INCOMPLETE',
+      });
+      continue;
+    }
+
+    const durationSec = (job.end.time - job.start.time) / 1000;
+    const minutes = Math.floor(durationSec / 60);
+    const seconds = Math.floor(durationSec % 60);
+    const durationStr = `${minutes}m ${seconds}s`;
+
+    let status = 'OK';
+    if (durationSec > 600) status = 'ERROR';
+    else if (durationSec > 300) status = 'WARNING';
+
+    results.push({
+      pid,
+      description,
+      duration: durationStr,
+      status,
+    });
+  }
+
+  return results;
+}
+
 function parseTime(hhmmss) {
   const [h, m, s] = hhmmss.trim().split(':').map(Number);
   const now = new Date();
