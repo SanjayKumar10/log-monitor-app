@@ -1,32 +1,42 @@
-# 🧾 Log Monitor App
+# 🧾 Log Monitor Application
 
-A full-stack application that parses `.log` files, analyzes job execution durations, and flags warnings or errors based on thresholds. Built with **Node.js**, **Express**, and a **React (Vite)** frontend. Generates downloadable **PDF reports** from logs.
-
----
-
-## 🚀 Features
-
-- ✅ Parse `.log` files with job START and END entries
-- ⏱️ Calculate durations per job using timestamps
-- ⚠️ Log Warnings for jobs over **5 minutes**
-- ❌ Log Errors for jobs over **10 minutes**
-- 🧾 Download analysis result as **PDF report**
-- 📁 Upload `.log` files via React frontend
-- 🖥️ View analysis results in a color-coded UI
+A full-stack application that analyzes `.log` files, measures how long each job takes from start to finish, and flags them with warnings or errors based on processing time.
 
 ---
 
-## 📦 Tech Stack
+## 🔧 Features
 
-| Layer      | Tech                        |
-|------------|-----------------------------|
-| Backend    | Node.js, Express, PDFKit    |
-| Frontend   | React (Vite), Axios         |
-| Styling    | Custom CSS (optional: Tailwind) |
-| File Upload| Multer                      |
-| PDF Gen    | PDFKit                      |
+- Upload `.log` files via UI
+- Parse and analyze job durations
+- Logs a ⚠️ warning if a job took more than 5 minutes
+- Logs a ❌ error if a job took more than 10 minutes
+- Generates downloadable PDF reports
+- Simple React UI layout
 
 ---
 
-## 📂 Project Structure
+## 🧰 Tech Stack
 
+- **Frontend**: React (Vite), Axios
+- **Backend**: Node.js, Express, Multer
+- **PDF**: jsPDF, AutoTable
+- **Testing**: Jest
+- **Styling**: CSS (can be replaced with Tailwind)
+
+---
+
+## 🚀 Getting Started
+
+### Install and run the backend
+ - cd server
+ - npm install
+ - node index.js
+
+ - Server runs at: http://localhost:4000
+
+### Install and run the frontend
+ - cd ../client
+ - yarn install
+ - yarn dev
+
+ - Frontend runs at: http://localhost:5173
