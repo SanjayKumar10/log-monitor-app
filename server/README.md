@@ -1,8 +1,5 @@
----
-
 #### 📁 `server/README.md`
 
-```markdown
 # 🧠 Server - Log Monitor App (Backend)
 
 This is the Node.js + Express backend for the Log Monitor App. It handles log parsing, job duration analysis, and PDF report generation.
@@ -11,7 +8,6 @@ This is the Node.js + Express backend for the Log Monitor App. It handles log pa
 
 ###🛠 Install Dependencies
 
-```bash
 cd server
 npm install
 
@@ -39,7 +35,6 @@ npm install
 
 ### 🧪 Running Tests (Jest)
 
-```bash
 yarn test
 # or
 npm test

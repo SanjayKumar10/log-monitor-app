@@ -21,7 +21,7 @@ A full-stack application that analyzes `.log` files, measures how long each job 
 - **Backend**: Node.js, Express, Multer
 - **PDF**: jsPDF, AutoTable
 - **Testing**: Jest
-- **Styling**: CSS (can be replaced with Tailwind)
+- **Styling**: CSS
 
 ---
 
